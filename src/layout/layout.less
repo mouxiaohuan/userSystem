@@ -45,12 +45,49 @@
 }
 
 .layout-header {
-    position: relative;
-    box-shadow: 4px 4px 40px 0 rgba(0, 0, 0, .05);
+    position: absolute;
+    box-shadow: 4px 4px 40px 0 rgba(0, 0, 0, 0.05);
     background: #fff;
-    height: 46px;
-    line-height: 46px;
+    line-height: 45px;
     padding: 0;
+    width: 100%;
+    min-width: 900px;
+    height:125px;
+    z-index: 10;
+    .header-top{
+        padding:0 200px;
+        width:100%;
+        overflow: hidden;
+        .service-image{
+            margin: 5px;
+            float: left;
+        }
+        .service{
+            color: rgb(236, 109, 2);
+            font-size:15px;
+            float: left;
+        }
+    }
+    .header-bottom{
+        padding:0 200px;
+        width:100%;
+        overflow: hidden;
+        .logo-line{
+            border-left: 1px solid rgb(156, 155, 153);
+            font-size: 25px;
+            margin: 20px 15px 10px;
+            float: left;
+            display: block;
+            width: 1px;
+            height: 25px;
+        }
+        .logo-info{
+            color:rgba(237, 109, 0, 0.898039);
+            float: left;
+            font-size:16px;
+            padding-top: 10PX;
+        }
+    }
     .trigger {
         height: 47px;
         width: 47px;

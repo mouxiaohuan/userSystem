@@ -3,12 +3,12 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { is, fromJS } from 'immutable';
 import Config from '../../config/index';
-
+import logoImage from '../../image/logo.png'
 import { initialState, goLogin } from '../../redux/action/login/loginAction';
 
 import styles from './login.less';
 
-import { Spin, Form, Input, Button, message } from 'antd';
+import { Spin, Form, Input, Button, Select ,message,Icon} from 'antd';
 const FormItem = Form.Item;
 
 /* 以类的方式创建一个组件 */
@@ -72,16 +72,28 @@ class Login extends Component {
 			<div className="login-form">
 				<Spin tip="载入中..." spinning={loading}>
 					<div className="login-logo">
-				        <img src={Config.logoSrc} />
-				        <span>Ant Design</span>
+				        <img src={logoImage} />
+				        <span>大额客户投资管理系统</span>
 				    </div>
 					<Form onSubmit={this.handleSubmit}>
+						<FormItem >
+							<Icon  type="share-alt" className="Icon-select"/>
+                            {getFieldDecorator('group', { initialValue: '1'})(
+
+								<Select defaultValue="lucy"  size='large'  >
+									<Option value="1" style={{paddingLeft:'34px',fontSize:'14px'}}>夸客金融</Option>
+									<Option value="2" style={{paddingLeft:'34px',fontSize:'14px'}}>夸客优富</Option>
+								</Select>
+                            )}
+						</FormItem>
 				        <FormItem hasFeedback>
+							<Icon  type="user" className="Icon-input"/>
                             {getFieldDecorator('username', { initialValue: 'sosout', rules: [{ required: true, message: Config.message.usernameInput }, { validator: this.checkUsername }] })(
-                                <Input size="large" placeholder="用户名" maxLength="6" />
+                                <Input size="large" placeholder="请输入账号名称" maxLength="6" />
                             )}
 				        </FormItem>
 				        <FormItem hasFeedback>
+							<Icon  type="unlock" className="Icon-input"/>
                             {getFieldDecorator('password', { rules: [{ required: true, message: Config.message.passwordInput }, { validator: this.checkPassword }] })(
                                 <Input size="large" type="password" placeholder="密码" maxLength="6" />
                             )}

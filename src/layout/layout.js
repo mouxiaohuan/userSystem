@@ -13,7 +13,7 @@ import { Lmenu } from './lmenu';
 import { Lfooter } from './lfooter';
 
 // 布局样式
-import './style/layout.less';
+import './layout.less';
 
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 const { Content, Footer, Sider } = Layout;
@@ -55,6 +55,7 @@ class Main extends Component {
 		// 这个组件是一个包裹组件，所有的路由跳转的页面都会以this.props.children的形式加载到本组件下
 		return (
 		<Layout className="layout">
+			<Lheader collapsed={this.state.collapsed} toggle={ collapsed => this.toggle(collapsed) } />
 	        <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
 		        <div className="layout-logo">
 		        	<Link to="/home">
@@ -65,7 +66,6 @@ class Main extends Component {
 	        	<Lmenu mode={ this.state.mode } />
 	        </Sider>
 	        <Layout>
-	          <Lheader collapsed={this.state.collapsed} toggle={ collapsed => this.toggle(collapsed) } />
 	          <Content className="layout-content">
 	           	{this.props.children}
 	          </Content>

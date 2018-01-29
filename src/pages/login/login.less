@@ -7,15 +7,15 @@
 }
 .login-form {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 45%;
+    left: 45%;
     margin: -160px 0 0 -160px;
-    width: 320px;
-    height: 320px;
-    padding: 36px;
+    width: 440px;
+    height: 400px;
+    padding: 30px;
     box-shadow: 0 0 100px rgba(0, 0, 0, .08);
-    background-color: #fff;
-    border-radius: 4px;
+    //border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.79);
     button {
         width: 100%;
     }
@@ -33,23 +33,56 @@
 
 .login-logo {
     text-align: center;
-    height: 40px;
-    line-height: 40px;
     cursor: pointer;
     margin-bottom: 24px;
+    overflow: hidden;
+    padding: 0 10px;
     img {
-        width: 40px;
-        margin-right: 8px;
+        width: 125px;
+        height:34px;
+        float: left;
     }
     span {
         vertical-align: text-bottom;
-        font-size: 16px;
+        font-size: 18px;
         text-transform: uppercase;
         display: inline-block;
+        padding: 4px;
+        color: #108ee9;
     }
 }
 
 .ant-spin-container,
 .ant-spin-nested-loading {
     height: 100%;
+}
+.ant-select-lg .ant-select-selection--single{
+    height: 40px;
+    font-size: 14px;
+    padding: 4px 4px 4px 30px;
+}
+.Icon-select{
+    font-size: 20px;
+    position: absolute;
+    z-index: 10;
+    margin: 10px;
+    color: #08080875;
+    transform:rotate(90deg);
+    -ms-transform:rotate(90deg); /* Internet Explorer 9*/
+    -moz-transform:rotate(90deg); /* Firefox */
+    -webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+    -o-transform:rotate(90deg); /* Opera */
+}
+.Icon-input{
+    font-size: 20px;
+    position: absolute;
+    z-index: 10;
+    margin: 10px;
+    color: #08080875;
+
+}
+.ant-input-lg {
+    height: 40px;
+    font-size: 16px;
+    padding: 4px 4px 4px 40px;
 }

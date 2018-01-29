@@ -3,7 +3,7 @@ const Main = {
     name: 'Ant Design Admin',
     prefix: 'antdAdmin',
     footerText: 'Ant Design Admin 版权所有 © 2017 由 sosout 支持',
-    logoSrc: 'https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg',
+    logoSrc: '../../image/logo.png',
     logoText: 'Antd Admin',
     needLogin: true,
 	message: { // 提示信息
