@@ -14,67 +14,63 @@ const SubMenu = Menu.SubMenu;
 export class Lmenu extends Component {
 	constructor(props, context) {
 		super(props, context); //后才能用this获取实例化对象
-		const openKeys = Config.localItem('OPENKEY') ? [Config.localItem('OPENKEY')] : [];
-		this.state = {
-			openKeys: openKeys
-		};
-	}
-    onOpenChange = (openKeys) => {
-	    const state = this.state;
-	    const latestOpenKey = openKeys.find(key => !(state.openKeys.indexOf(key) > -1));
-	    const latestCloseKey = state.openKeys.find(key => !(openKeys.indexOf(key) > -1));
 
-	    let nextOpenKeys = [];
-	    if (latestOpenKey) {
-	      nextOpenKeys = this.getAncestorKeys(latestOpenKey).concat(latestOpenKey);
-	    }
-	    if (latestCloseKey) {
-	      nextOpenKeys = this.getAncestorKeys(latestCloseKey);
-	    }
-	    Config.localItem('OPENKEY', nextOpenKeys);
-	    this.setState({ openKeys: nextOpenKeys });
 	}
-  	getAncestorKeys = (key) => {
-	    const map = {
-	      sub3: ['sub2'],
-	    };
-	    return map[key] || [];
-	}
+
 	render() {
-		const defaultSelectedKey = process.env.NODE_ENV !== 'production' ? [location.pathname.split('/')[location.pathname.split('/').length - 1] || 'home'] : [location.hash.split('/')[location.hash.split('/').length - 1].split('?')[0] || 'home'];
 		return (
-			<Menu openKeys={this.state.openKeys} onOpenChange={this.onOpenChange} theme="dark" mode={this.props.mode} defaultSelectedKeys={defaultSelectedKey}>
-		        <Menu.Item key="home">
-			        <Link to="/home">
-		              <Icon type="laptop" />
-		              {!this.props.collapsed && <span className="nav-text">快速入门</span>}
-		            </Link>
-	            </Menu.Item>
+			<div className="lmenu">
+				<span>我的账户</span>
+				<div className="lmenu-item active" >
+					<Link to="/user">
+						<Icon type="appstore-o" />
+                        <span className="nav-text">账户总览</span>
+					</Link>
+				</div>
+				<div className="lmenu-item">
+					<Link to="/user">
+						<Icon type="pay-circle-o" />
+						<span className="nav-text">我的投资</span>
+					</Link>
 
-                <Menu.Item key="user">
-			        <Link to="/user">
-		              <Icon type="user" />
-		              {!this.props.collapsed && <span className="nav-text">用户管理</span>}
-		            </Link>
-	            </Menu.Item>
-	            <Menu.Item key="setting">
-	            <Link to="/setting">
-	              <Icon type="setting" />
-	              {!this.props.collapsed && <span className="nav-text">系统设置</span>}
-	            </Link>
-	            </Menu.Item>
-	            <Menu.Item key="adver">
-	            <Link to="/adver">
-	              <Icon type="notification" />
-	              {!this.props.collapsed && <span className="nav-text">广告管理</span>}
-	            </Link>
-	            </Menu.Item>
+				</div>
+				<div className="lmenu-item">
+					<Link to="/user">
+						<Icon type="user" />
+						<span className="nav-text">账户管理</span>
+					</Link>
 
-	            <SubMenu key="sub2" title={<span><Icon type="setting" /><span className="nav-text">只展开当前父级菜单</span></span>}>
-			          <Menu.Item key="9">Option 9</Menu.Item>
-			          <Menu.Item key="10">Option 10</Menu.Item>
-			    </SubMenu>
-	        </Menu>
+				</div>
+				<div className="lmenu-item ">
+					<Link to="/user" >
+						<Icon type="solution" />
+						<span className="nav-text">基本信息</span>
+					</Link>
+
+				</div>
+				<div className="lmenu-item ">
+					<Link to="/user" >
+						<Icon type="safety" />
+						<span className="nav-text">安全中心</span>
+					</Link>
+
+				</div>
+				<div className="lmenu-item ">
+					<Link to="/user" >
+						<Icon type="credit-card" />
+						<span className="nav-text">银行卡信息</span>
+					</Link>
+				</div>
+				<div className="lmenu-item ">
+					<Link to="/user" >
+						<Icon type="notification" />
+						<span className="nav-text">我的消息</span>
+					</Link>
+
+				</div>
+
+			</div>
+
 		)
 	}
 }

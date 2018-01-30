@@ -47,7 +47,7 @@ export class Lheader extends Component {
 						<span style={{float:'right'}}> 未读消息 117</span>
 						<img src={unread} style={{float:'right',marginTop:'15px'}} className="service-image" />
 					</div>
-					<span  style={{float:'right',margin:'auto 10px'}} onClick={this.logout}>【安全退出】</span>
+					<span  style={{float:'right',margin:'auto 10px',cursor: 'pointer'}} onClick={this.logout}>【安全退出】</span>
 					<span style={{float:'right',margin:'auto 5px'}}>欢迎您！ QingXu</span>
 				</div>
 				<div className="header-bottom">
@@ -55,6 +55,12 @@ export class Lheader extends Component {
 					<span className="logo-line">
 					</span>
 					<span className="logo-info">让积累更有价值</span>
+					<div className="navigation">
+						<div className="navigation-item">首页</div>
+						<div className="navigation-item">关于我们</div>
+						<div className="navigation-item active">我要投资</div>
+						<div className="navigation-item">我的账户</div>
+					</div>
 				</div>
 
 	            {/*<Icon className="trigger" type={this.props.collapsed ? 'menu-unfold' : 'menu-fold'} onClick={this.toggle} />*/}

@@ -10,6 +10,8 @@ import { Lheader } from './lheader';
 // 公共菜单
 import { Lmenu } from './lmenu';
 // 公共底部
+import { Lmap } from './lmap';
+// 公共底部
 import { Lfooter } from './lfooter';
 
 // 布局样式
@@ -56,21 +58,25 @@ class Main extends Component {
 		return (
 		<Layout className="layout">
 			<Lheader collapsed={this.state.collapsed} toggle={ collapsed => this.toggle(collapsed) } />
-	        <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
-		        <div className="layout-logo">
-		        	<Link to="/home">
-			        	<img className="logo-img" src={Config.logoSrc} />
-			        	<span className="logo-text">{Config.logoText}</span>
-		        	</Link>
-		        </div>
-	        	<Lmenu mode={ this.state.mode } />
-	        </Sider>
-	        <Layout>
-	          <Content className="layout-content">
-	           	{this.props.children}
-	          </Content>
-	          <Lfooter />
-	        </Layout>
+			<Lmap collapsed={this.state.collapsed} toggle={ collapsed => this.toggle(collapsed) } />
+			<div className="middle">
+				<Lmenu mode={ this.state.mode } />
+				<Content className="layout-content">
+					{this.props.children}
+				</Content>
+			</div>
+			<Lfooter />
+
+	        {/*<Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>*/}
+		        {/*<div className="layout-logo">*/}
+		        	{/*<Link to="/home">*/}
+			        	{/*<img className="logo-img" src={Config.logoSrc} />*/}
+			        	{/*<span className="logo-text">{Config.logoText}</span>*/}
+		        	{/*</Link>*/}
+		        {/*</div>*/}
+
+	        {/*</Sider>*/}
+
 	    </Layout>
 		);
 	}
