@@ -48,7 +48,7 @@ export class Lheader extends Component {
 						<img src={unread} style={{float:'right',marginTop:'15px'}} className="service-image" />
 					</div>
 					<span  style={{float:'right',margin:'auto 10px',cursor: 'pointer'}} onClick={this.logout}>【安全退出】</span>
-					<span style={{float:'right',margin:'auto 5px'}}>欢迎您！ QingXu</span>
+					<span style={{float:'right',margin:'auto 5px'}}>欢迎您！ XiaohuanMou</span>
 				</div>
 				<div className="header-bottom">
 					<img src={logo} style={{float:'left',marginTop:'15px'}} />

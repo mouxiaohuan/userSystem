@@ -15,7 +15,7 @@ const Step = Steps.Step;
 
 
 /* 以类的方式创建一个组件 */
-class Main extends Component {
+class Pay extends Component {
     constructor(props) {
     	super(props);
         this.state = {

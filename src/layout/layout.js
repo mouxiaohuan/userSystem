@@ -56,7 +56,7 @@ class Main extends Component {
 	render() {
 		// 这个组件是一个包裹组件，所有的路由跳转的页面都会以this.props.children的形式加载到本组件下
 		return (
-		<Layout className="layout">
+		<Layout className="layout" style={{width:'100%'}} >
 			<Lheader collapsed={this.state.collapsed} toggle={ collapsed => this.toggle(collapsed) } />
 			<Lmap collapsed={this.state.collapsed} toggle={ collapsed => this.toggle(collapsed) } />
 			<div className="middle">

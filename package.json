@@ -1,7 +1,7 @@
 {
   "name": "react-antd",
   "version": "1.0.0",
-  "description": "基于react + redux + immutable + less + ES6/7 + webpack + fetch + react-router + antd(1.x)实现的SPA后台管理系统模板",
+  "description": "夸客金融",
   "main": "server.js",
   "scripts": {
     "dev": "node server.js",
@@ -43,7 +43,9 @@
     "redux": "^3.6.0",
     "redux-immutablejs": "^0.0.8",
     "redux-promise": "^0.5.3",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "amazeui-react": "^2.1.0"
+
   },
   "devDependencies": {
     "assets-webpack-plugin": "^3.5.1",

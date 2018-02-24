@@ -22,7 +22,7 @@ export class Lmenu extends Component {
 			<div className="lmenu">
 				<span>我的账户</span>
 				<div className="lmenu-item active" >
-					<Link to="/user">
+					<Link to="/home">
 						<Icon type="appstore-o" />
                         <span className="nav-text">账户总览</span>
 					</Link>

@@ -38,10 +38,10 @@ app.get('*', function(req, res) {
 });
 
 
-var port = process.env.PORT || 8082;
+var port = process.env.PORT || 8081;
 
 /* 启动服务 */
-app.listen(port, 'localhost', function() {
+app.listen(port, '0.0.0.0', function() {
     console.log('成功开启'+ port +'端口');
     var uri = 'http://localhost:' + port;
     console.log('Listening at ' + uri + '\n');
